@@ -47,18 +47,4 @@ class HashTable:
             if lista is not None:
                 todos_itens.extend(lista.obter_todos_itens())
         return todos_itens
-    
-    def obter_todas_chaves(self):
-        todas_chaves = []
-        for lista in self.tabela:
-            if lista is not None:
-                todas_chaves.extend(lista.obter_todas_chaves())
-        return todas_chaves
-    
-    def obter_todos_valores(self):
-        todos_valores = []
-        for lista in self.tabela:
-            if lista is not None:
-                todos_valores.extend(lista.obter_todos_valores())
-        return todos_valores
 

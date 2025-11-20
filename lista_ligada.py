@@ -66,19 +66,3 @@ class ListaLigada:
             itens.append((atual.chave, atual.valor))
             atual = atual.proximo
         return itens
-    
-    def obter_todas_chaves(self):
-        chaves = []
-        atual = self.cabeca
-        while atual is not None:
-            chaves.append(atual.chave)
-            atual = atual.proximo
-        return chaves
-    
-    def obter_todos_valores(self):
-        valores = []
-        atual = self.cabeca
-        while atual is not None:
-            valores.append(atual.valor)
-            atual = atual.proximo
-        return valores
