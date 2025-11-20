@@ -93,7 +93,7 @@ class ArvoreAVL:
 
     def buscar_recursivo(self, no, chave):
         if no is None:
-            return None
+            return 0
         if chave == no.chave:
             return no.valor
         elif chave < no.chave:
@@ -129,4 +129,15 @@ class ArvoreAVL:
                 no.direita = self.remover_recursivo(no.direita, sucessor.chave)
 
         return self.balancear(no)
+
+    def percorrer(self):
+        resultado = []
+        self.percurso_recursivo(self.raiz, resultado)
+        return resultado
+
+    def percurso_recursivo(self, no, resultado):
+        if no:
+            self.percurso_recursivo(no.esquerda, resultado)
+            resultado.append((no.chave, no.valor))
+            self.percurso_recursivo(no.direita, resultado)
     
