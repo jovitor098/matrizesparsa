@@ -72,13 +72,13 @@ def run_test_routine(n, sp, struct_name, MatrizClass, coords_A, coords_B):
 
     # 5. Multiplicação Matriz (Apenas se N for razoável ou muito esparso)
     # Para Árvore em N grande e esparsidade alta, isso pode demorar muito.
-    if n <= 500 or (n > 500 and sp < 0.001):
+    if n == 1000 and sp >= 0.1:
+        print(f"{n:<8} | {sp:<10.2g} | {struct_name:<12} | {'Mult':<10} | {'SKIP':<10} | {'-':<10}")
+    else:
         start = time.perf_counter()
         mat_a.multiplicar(mat_b)
         t_mult = time.perf_counter() - start
         print(f"{n:<8} | {sp:<10.2g} | {struct_name:<12} | {'Mult':<10} | {t_mult:<10.6f} | {'-':<10}")
-    else:
-        print(f"{n:<8} | {sp:<10.2g} | {struct_name:<12} | {'Mult':<10} | {'SKIP':<10} | {'-':<10}")
 
     del mat_a, mat_b
     gc.collect()
