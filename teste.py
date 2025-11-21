@@ -104,7 +104,7 @@ def benchmark_engine():
             run_test_routine(n, sp, "BinTree", MatrizEsparsa2, coords_A, coords_B)
             
             # Teste Estrutura 3 (Densa) - Cuidado com N grande
-            if n <= 500:
+            if n <= 10000:
                 start = time.perf_counter()
                 dense_a = [[0.0] * n for _ in range(n)]
                 for r, c in coords_A: dense_a[r][c] = random.random()
